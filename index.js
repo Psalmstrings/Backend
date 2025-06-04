@@ -7,9 +7,11 @@ const morgan = require("morgan")
 
 
 app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 app.use(cors()) 
 app.use(morgan("dev"))
 
+const productRouter = require("./routers/productRouter")
 const userRouter = require("./routers/userRouter")
 const categoryRouter = require("./routers/categoryRouter")
 const blogRouter = require("./routers/blogRouter")
